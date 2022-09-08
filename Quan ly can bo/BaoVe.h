@@ -9,6 +9,6 @@ public:
 	BaoVe();
 	void Nhap();
 	void In();
-	int Luong();
+	int Luong()override;
 };
 

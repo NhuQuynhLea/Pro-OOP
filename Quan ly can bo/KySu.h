@@ -10,5 +10,5 @@ public:
 	KySu();
 	void Nhap();
 	void In();
-	int Luong();
+	int Luong()override;
 };

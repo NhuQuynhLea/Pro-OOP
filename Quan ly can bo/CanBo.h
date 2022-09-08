@@ -13,4 +13,5 @@ public:
 	void Nhap(string);
 	void In();
 	string TenCanBo();
+	virtual int Luong()=0;
 };

@@ -6,9 +6,10 @@
 
 class QLCB {
 private:
-	vector<CongNhan> dsCongNhan;
-	vector<KySu> dsKySu;
-	vector<BaoVe> dsBaoVe;
+	//vector<CongNhan> dsCongNhan;
+	//vector<KySu> dsKySu;
+	//vector<BaoVe> dsBaoVe;
+	vector<shared_ptr<CanBo>> dsCanBo;
 public:
 	void ThemCN();
 	void ThemKS();

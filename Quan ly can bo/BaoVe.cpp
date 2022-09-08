@@ -5,7 +5,12 @@ int sttBV;
 BaoVe::BaoVe() {};
 void BaoVe::Nhap() {
 	sttBV++;
-	CanBo::Nhap("BV" + to_string(sttBV));
+	string tmp = to_string(sttBV);
+	while (tmp.length() < 3)
+	{
+		tmp = '0' + tmp;
+	}
+	CanBo::Nhap("BV" + tmp);
 	cin.ignore();
 	cout << "Nhap khu vuc bao ve: ", getline(cin,khuvuc);
 }

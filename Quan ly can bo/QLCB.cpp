@@ -2,42 +2,28 @@
 
 void QLCB::ThemCN()
 {
-	CongNhan congNhan;
-	congNhan.Nhap();
-	dsCongNhan.push_back(congNhan);
+	shared_ptr<CongNhan>congNhan = make_shared<CongNhan>();
+	congNhan->Nhap();
+	dsCanBo.push_back(congNhan);
 }
 void QLCB::ThemKS()
 {
-	KySu kySu;
-	kySu.Nhap();
-	dsKySu.push_back(kySu);
+	shared_ptr<KySu>kySu = make_shared<KySu>();
+	kySu->Nhap();
+	dsCanBo.push_back(kySu);
 }
 void QLCB::ThemBV()
 {
-	BaoVe baoVe;
-	baoVe.Nhap();
-	dsBaoVe.push_back(baoVe);
+	shared_ptr<BaoVe>baoVe = make_shared<BaoVe>();
+	baoVe->Nhap();
+	dsCanBo.push_back(baoVe);
 }
 void QLCB::InTT(string ten)
 {
-	for (auto i : dsCongNhan)
+	for (auto i : dsCanBo)
 	{
-		if (i.TenCanBo() == ten) {
-			i.In();
-			return;
-		}
-	}
-	for (auto i : dsKySu)
-	{
-		if (i.TenCanBo() == ten) {
-			i.In();
-			return;
-		}
-	}
-	for (auto i : dsBaoVe)
-	{
-		if (i.TenCanBo() == ten) {
-			i.In();
+		if (i->TenCanBo() == ten) {
+			i->In();
 			return;
 		}
 	}
@@ -45,26 +31,12 @@ void QLCB::InTT(string ten)
 }
 void QLCB::TinhLuong(string ten)
 {
-	for (auto i : dsCongNhan)
+	for (auto i : dsCanBo)
 	{
-		if (i.TenCanBo() == ten) {
-			cout<<"Luong cua "<<ten<<": "<<i.Luong()<<"\n";
+		if (i->TenCanBo() == ten) {
+			cout << "Luong cua " << ten << ": " << i->Luong() << "\n";
 			return;
 		}
 	}
-	for (auto i : dsKySu)
-	{
-		if (i.TenCanBo() == ten) {
-			cout << "Luong cua " << ten << ": " << i.Luong()<<"\n";
-			return;
-		}
-	}
-	for (auto i : dsBaoVe)
-	{
-		if (i.TenCanBo() == ten) {
-			cout << "Luong cua " << ten << ": " << i.Luong()<<"\n";
-			return;
-		}
-	}
-	cout << "Khong tim thay "<<ten<<"\n";
+	cout << "Khong tim thay " << ten << "\n";
 }

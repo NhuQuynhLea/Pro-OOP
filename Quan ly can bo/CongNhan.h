@@ -9,5 +9,5 @@ public:
 	CongNhan();
 	void Nhap();
 	void In();
-	int Luong();
+	int Luong()override;
 };
